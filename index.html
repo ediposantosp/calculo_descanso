@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cálculo Descanso Motoristas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Cálculo Horas de Descanso</h1>
+      <p class="subtitle">Preencha as datas e horas para calcular o descanso do funcionário, o resultado aparece automaticamente.</p>
+    </header>
+
+    <div class="panel">
+      <form id="calcForm" aria-label="Formulário de cálculo de descanso">
+        <div class="row">
+          <label for="dataLargada">Data da Largada</label>
+          <input type="date" id="dataLargada" required />
+          <label for="horaLargada">Hora da Largada</label>
+          <input type="time" id="horaLargada" required />
+        </div>
+
+        <div class="row">
+          <label for="dataPegada">Data da Pegada</label>
+          <input type="date" id="dataPegada" required />
+          <label for="horaPegada">Hora da Pegada</label>
+          <input type="time" id="horaPegada" required />
+        </div>
+      </form>
+
+      <aside class="result-panel" aria-live="polite">
+        <h2>Resultado</h2>
+        <p><strong>Descanso:</strong> <span id="descansoText">—</span></p>
+        <p><strong>Situação:</strong> <span id="situacaoText">—</span></p>
+        <p class="note-small">Limite mínimo fixo: <strong>11 horas</strong>.</p>
+      </aside>
+    </div>
+
+    <footer class="footer">
+      <small>Assinado: Édipo Santos</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
