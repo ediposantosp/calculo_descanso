@@ -13,7 +13,6 @@
 - `style.css` — estilos.
 - `script.js` — lógica.
 - `README.md` — documentação.
-- `.gitignore` — recomendação para Git.
 
 **Uso local**
 - Abra `index.html` no navegador.
