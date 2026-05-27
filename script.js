@@ -12,7 +12,6 @@ function minutesToHHMM(mins) {
 }
 
 function ensureLater(start, end) {
-  // If end <= start, add days to end until > start
   while (end <= start) {
     end = new Date(end.getTime() + 24*60*60*1000);
   }
@@ -44,7 +43,7 @@ function computeAndRender() {
   const diffMs = end - start;
   const diffMins = Math.round(diffMs / (60*1000));
 
-  const limiteMins = 11 * 60; // limite fixo: 11 horas
+  const limiteMins = 11 * 60;
 
   const descansoText = minutesToHHMM(diffMins);
   const situacao = diffMins < limiteMins ? "❌ Descanso insuficiente" : "✅ Descanso suficiente";
@@ -54,14 +53,14 @@ function computeAndRender() {
   situElem.style.color = diffMins < limiteMins ? "var(--danger)" : "var(--ok)";
 }
 
-// attach listeners for instant recalculation
+
 ["dataLargada","horaLargada","dataPegada","horaPegada"].forEach(id=>{
   const el = document.getElementById(id);
   el.addEventListener("input", computeAndRender);
   el.addEventListener("change", computeAndRender);
 });
 
-// initial render (in case fields are pre-filled)
+
 window.addEventListener("load", computeAndRender);
 
 const campos = [
@@ -75,7 +74,7 @@ campos.forEach((id, i) => {
   const campo = document.getElementById(id);
   campo.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
-      e.preventDefault(); // impede enviar o formulário
+      e.preventDefault();
       const prox = document.getElementById(campos[i + 1]);
       if (prox) prox.focus(); // avança para o próximo
     }
