@@ -76,7 +76,7 @@ campos.forEach((id, i) => {
     if (e.key === "Enter") {
       e.preventDefault();
       const prox = document.getElementById(campos[i + 1]);
-      if (prox) prox.focus(); // avança para o próximo
+      if (prox) prox.focus();
     }
   });
 });
